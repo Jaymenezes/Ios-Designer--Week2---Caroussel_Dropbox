@@ -89,7 +89,8 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
                 print("field empty true")
                 
                 
-      
+            })
+           
         } else if emailText.text == "Codepath" && passwordText.text == "Awesome" {
             delay(2, closure: { () -> () in
                 
