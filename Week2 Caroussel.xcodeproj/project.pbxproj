@@ -17,6 +17,8 @@
 		CE93B4CC1DBA8309007E8621 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4CB1DBA8309007E8621 /* LoginViewController.swift */; };
 		CE93B4CE1DBAEBFB007E8621 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4CD1DBAEBFB007E8621 /* WelcomeViewController.swift */; };
 		CE93B4D01DBAF111007E8621 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4CF1DBAF111007E8621 /* FeedViewController.swift */; };
+		CE93B4D21DBAFA84007E8621 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4D11DBAFA84007E8621 /* ConversationViewController.swift */; };
+		CE93B4D41DBAFA8F007E8621 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4D31DBAFA8F007E8621 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		CE93B4CB1DBA8309007E8621 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE93B4CD1DBAEBFB007E8621 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CE93B4CF1DBAF111007E8621 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		CE93B4D11DBAFA84007E8621 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		CE93B4D31DBAFA8F007E8621 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				CE93B4B51DBA7903007E8621 /* AppDelegate.swift */,
 				CE93B4B71DBA7903007E8621 /* ViewController.swift */,
 				CE93B4B91DBA7903007E8621 /* Main.storyboard */,
+				CE93B4D11DBAFA84007E8621 /* ConversationViewController.swift */,
+				CE93B4D31DBAFA8F007E8621 /* SettingsViewController.swift */,
 				CE93B4CF1DBAF111007E8621 /* FeedViewController.swift */,
 				CE93B4CB1DBA8309007E8621 /* LoginViewController.swift */,
 				CE93B4CD1DBAEBFB007E8621 /* WelcomeViewController.swift */,
@@ -153,11 +159,13 @@
 			files = (
 				CE93B4B81DBA7903007E8621 /* ViewController.swift in Sources */,
 				CE93B4C81DBA7B62007E8621 /* Common.swift in Sources */,
+				CE93B4D21DBAFA84007E8621 /* ConversationViewController.swift in Sources */,
 				CE93B4B61DBA7903007E8621 /* AppDelegate.swift in Sources */,
 				CE93B4CE1DBAEBFB007E8621 /* WelcomeViewController.swift in Sources */,
 				CE93B4CC1DBA8309007E8621 /* LoginViewController.swift in Sources */,
 				CE93B4CA1DBA7E00007E8621 /* IntroViewController.swift in Sources */,
 				CE93B4D01DBAF111007E8621 /* FeedViewController.swift in Sources */,
+				CE93B4D41DBAFA8F007E8621 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
