@@ -19,17 +19,45 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var fieldParentView: UIView!
     @IBOutlet weak var buttonParentView: UIView!
-    
     @IBOutlet weak var backButton: UIButton!
-    
     @IBOutlet weak var emailText: UITextField!
-    
-    
+    @IBOutlet weak var login_text: UIImageView!
     @IBOutlet weak var passwordText: UITextField!
+    
+    @IBOutlet weak var signInNavBar: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Set initial transform values 20% of original size
+        let transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        // Apply the transform properties of the views
+        login_text.transform = transform
+        fieldParentView.transform = transform
+        // Set the alpha properties of the views to transparent
+        signInNavBar.transform = transform
+        
+        signInNavBar.alpha = 0
+        login_text.alpha = 0
+        fieldParentView.alpha = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Animate the code within over 0.3 seconds...
+        UIView.animate(withDuration: 0.4) { () -> Void in
+            // Return the views transform properties to their default states.
+            self.fieldParentView.transform = CGAffineTransform.identity
+            self.signInNavBar.transform = CGAffineTransform.identity
+            self.login_text.transform = CGAffineTransform.identity
+
+            // Set the alpha properties of the views to fully opaque
+            self.fieldParentView.alpha = 1
+            self.signInNavBar.alpha = 1
+            self.login_text.alpha = 1
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         
         
         
@@ -55,11 +83,10 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         
         delay(0.5) {
             NotificationCenter.default.addObserver(forName: Notification.Name.UIKeyboardWillHide, object: nil, queue: OperationQueue.main) { (notification: Notification) in
-                delay(0.5) {
+                delay(0) {
                     self.buttonParentView.frame.origin.y = self.buttonInitialY - self.buttonOffset
                     
-//                    self.fieldParentView.frame.origin.y = self.buttonInitialY
-//                    self.buttonParentView.frame.origin.y = self.buttonInitialY
+
                     self.loginScrollView.contentOffset.y = self.loginScrollView.contentInset.bottom
                     
                 }
@@ -83,6 +110,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    @IBAction func didPressBack(_ sender: AnyObject) {
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func didPressLogin(_ sender: AnyObject) {
         
         loginIndicator.startAnimating()

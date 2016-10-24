@@ -50,7 +50,7 @@
                                         <rect key="frame" x="32" y="1256" width="323" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Ncj-uh-zmf" kind="push" id="g9d-FH-z5h"/>
+                                            <segue destination="Ncj-uh-zmf" kind="push" animates="NO" id="g9d-FH-z5h"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -146,8 +146,11 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UYI-Id-iIi">
-                                <frame key="frameInset" minX="16" minY="22" width="25" height="35"/>
+                                <frame key="frameInset" minX="16" minY="22" width="34" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didPressBack:" destination="Ncj-uh-zmf" eventType="touchUpInside" id="Ap1-Og-JS4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,7 +164,9 @@
                         <outlet property="loginButton" destination="o0z-6m-aEO" id="2fK-x9-Pdl"/>
                         <outlet property="loginIndicator" destination="N3M-UJ-ULz" id="qdG-7A-hLc"/>
                         <outlet property="loginScrollView" destination="6Ka-lC-b11" id="RS8-hx-qPm"/>
+                        <outlet property="login_text" destination="L5e-Hv-wX8" id="J9j-RK-12M"/>
                         <outlet property="passwordText" destination="HPy-qb-MeV" id="SwW-Eg-pHF"/>
+                        <outlet property="signInNavBar" destination="KUr-l1-gWJ" id="OHp-8t-HFp"/>
                         <segue destination="8DM-oA-KRr" kind="push" identifier="loginSegue" id="9LG-pD-zhO"/>
                     </connections>
                 </viewController>
