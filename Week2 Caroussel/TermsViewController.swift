@@ -10,8 +10,24 @@ import UIKit
 
 class TermsViewController: UIViewController {
 
+    @IBOutlet weak var termsWebView: UIWebView!
+    @IBOutlet weak var termsLoadIndicator: UIActivityIndicatorView!
+    
+    let url = "https://www.dropbox.com/terms?mobile=1"
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        termsLoadIndicator.startAnimating()
+        let requestURL = NSURL(string:url)
+        // Place the URL in a URL Request.
+        let request = NSURLRequest(url: requestURL! as URL)
+        // Load Request into WebView.
+        termsWebView.loadRequest(request as URLRequest)
+        termsLoadIndicator.stopAnimating()
+        
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -23,7 +39,8 @@ class TermsViewController: UIViewController {
     
 
     @IBAction func didPressDone(_ sender: AnyObject) {
-        
+        self.dismiss(animated: true, completion: nil)
+
     }
     /*
     // MARK: - Navigation
