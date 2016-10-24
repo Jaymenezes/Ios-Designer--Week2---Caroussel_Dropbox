@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7ADA9D1DBDD9FC006B5033 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7ADA9C1DBDD9FC006B5033 /* GetStartedViewController.swift */; };
 		CE93B4B61DBA7903007E8621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4B51DBA7903007E8621 /* AppDelegate.swift */; };
 		CE93B4B81DBA7903007E8621 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4B71DBA7903007E8621 /* ViewController.swift */; };
 		CE93B4BB1DBA7903007E8621 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE93B4B91DBA7903007E8621 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE7ADA9C1DBDD9FC006B5033 /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		CE93B4B21DBA7903007E8621 /* Week2 Caroussel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week2 Caroussel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE93B4B51DBA7903007E8621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE93B4B71DBA7903007E8621 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				CE93B4D31DBAFA8F007E8621 /* SettingsViewController.swift */,
 				CE93B4CF1DBAF111007E8621 /* FeedViewController.swift */,
 				CE93B4D71DBDCC94007E8621 /* TermsViewController.swift */,
+				CE7ADA9C1DBDD9FC006B5033 /* GetStartedViewController.swift */,
 				CE93B4CB1DBA8309007E8621 /* LoginViewController.swift */,
 				CE93B4CD1DBAEBFB007E8621 /* WelcomeViewController.swift */,
 				CE93B4C91DBA7E00007E8621 /* IntroViewController.swift */,
@@ -166,6 +169,7 @@
 				CE93B4D81DBDCC94007E8621 /* TermsViewController.swift in Sources */,
 				CE93B4D61DBDC0A2007E8621 /* CreateViewController.swift in Sources */,
 				CE93B4B81DBA7903007E8621 /* ViewController.swift in Sources */,
+				CE7ADA9D1DBDD9FC006B5033 /* GetStartedViewController.swift in Sources */,
 				CE93B4C81DBA7B62007E8621 /* Common.swift in Sources */,
 				CE93B4D21DBAFA84007E8621 /* ConversationViewController.swift in Sources */,
 				CE93B4B61DBA7903007E8621 /* AppDelegate.swift in Sources */,
@@ -333,6 +337,7 @@
 				CE93B4C61DBA7903007E8621 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

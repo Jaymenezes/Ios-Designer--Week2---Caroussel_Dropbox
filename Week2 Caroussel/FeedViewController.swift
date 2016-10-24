@@ -37,7 +37,7 @@ class FeedViewController: UIViewController {
    
         
        delay(0.1) {
-        self.feedScrollView.transform = CGAffineTransform(translationX: 0, y: -40)
+        self.feedScrollView.transform = CGAffineTransform(translationX: 0, y: -60)
         }
     }
     
