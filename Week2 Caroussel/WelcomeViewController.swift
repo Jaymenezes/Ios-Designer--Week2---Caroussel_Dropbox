@@ -8,11 +8,16 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var carousselButton: UIButton!
+    @IBOutlet weak var welcomePageControl: UIPageControl!
     @IBOutlet weak var welcomeScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomeScrollView.delegate = self
+        
+        carousselButton.alpha = 0
         welcomeScrollView.contentSize = CGSize(width: 1500, height: 667)
         welcomeScrollView.frame.size = CGSize(width: 375, height: 667)
         
@@ -25,6 +30,23 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let page: Int = Int(round(scrollView.contentOffset.x / 375))
+        welcomePageControl.currentPage = page
+        
+        if page == 3 {
+            welcomePageControl.isHidden = true
+            UIView.animate(withDuration: 0.7, animations: {
+            self.carousselButton.alpha = 1
+            })
+            
+        }
+
+        }
+        
+    
+    
+
 
     /*
     // MARK: - Navigation
