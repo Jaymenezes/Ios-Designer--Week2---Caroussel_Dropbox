@@ -56,7 +56,14 @@ Time spent: `<15>`
 
 #### The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] create and login forms scale and fade in when VC is called
+- [x] create password is secure text, and password strenght is implemented
+- [x] different alert controllers called for when the forms are empty and when the data is wrong
+- [x] user has to check agree to terms box to unlock "create dropbox" button
+- [x] create and login forms scale and fade in when VC is called
+- [x] take caroussel for a spin button is animated
+- [x] when learn about caroussel banner is dismissed, feed scroll view animates to fill its place
+
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -67,7 +74,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='caroussel_gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
