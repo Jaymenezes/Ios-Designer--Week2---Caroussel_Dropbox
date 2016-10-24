@@ -24,9 +24,15 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var emailText: UITextField!
     
+    
     @IBOutlet weak var passwordText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
+        
+        
         buttonInitialY = buttonParentView.frame.origin.y
         buttonOffset = -120
         
@@ -49,8 +55,11 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         
         delay(0.5) {
             NotificationCenter.default.addObserver(forName: Notification.Name.UIKeyboardWillHide, object: nil, queue: OperationQueue.main) { (notification: Notification) in
-                delay(0.25) {
+                delay(0.5) {
                     self.buttonParentView.frame.origin.y = self.buttonInitialY - self.buttonOffset
+                    
+//                    self.fieldParentView.frame.origin.y = self.buttonInitialY
+//                    self.buttonParentView.frame.origin.y = self.buttonInitialY
                     self.loginScrollView.contentOffset.y = self.loginScrollView.contentInset.bottom
                     
                 }
@@ -64,6 +73,14 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if loginScrollView.contentOffset.y <= -50 {
+            view.endEditing(true)
+            print("scroll down called")
+        }
+        
     }
     
     @IBAction func didPressLogin(_ sender: AnyObject) {

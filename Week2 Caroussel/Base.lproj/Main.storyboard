@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="8DM-oA-KRr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="mwy-lH-Lee">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -64,6 +64,12 @@
                     <connections>
                         <outlet property="introImage" destination="Bk6-2t-ZIj" id="4hg-kn-9I6"/>
                         <outlet property="introScrollView" destination="mYl-ni-rwl" id="QqQ-MM-piB"/>
+                        <outlet property="introTIle5" destination="yCy-rs-QuL" id="Bt3-MW-ZrT"/>
+                        <outlet property="introTile1" destination="GB5-y5-c8N" id="HkM-XN-5cE"/>
+                        <outlet property="introTile2" destination="Yzj-I8-h9A" id="WwR-Ac-6nz"/>
+                        <outlet property="introTile3" destination="fAm-ls-YxV" id="jwn-Qy-aaM"/>
+                        <outlet property="introTile4" destination="j4y-XT-6X9" id="KJp-H1-y2H"/>
+                        <outlet property="introTile6" destination="SBa-It-Wq7" id="bL9-pX-9Kc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -412,6 +418,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="aWl-H8-Lg8"/>
+        <segue reference="dx8-Iw-CrN"/>
     </inferredMetricsTieBreakers>
 </document>
