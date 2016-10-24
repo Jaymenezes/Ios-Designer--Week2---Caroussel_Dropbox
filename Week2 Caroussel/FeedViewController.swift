@@ -10,11 +10,14 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    @IBOutlet weak var dismissBanner: UIButton!
+    @IBOutlet weak var bannerImage: UIImageView!
     @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var feedScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        bannerImage.isHidden = false
+        dismissBanner.isHidden = false
         feedScrollView.contentSize = feedImage.frame.size
 //        feedScrollView.frame.size = CGSize(width: 375, height: 667)
         
@@ -26,6 +29,16 @@ class FeedViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func didDismissBanner(_ sender: AnyObject) {
+        bannerImage.isHidden = true
+        dismissBanner.isHidden = true
+   
+        
+       delay(0.1) {
+        self.feedScrollView.transform = CGAffineTransform(translationX: 0, y: -40)
+        }
     }
     
 

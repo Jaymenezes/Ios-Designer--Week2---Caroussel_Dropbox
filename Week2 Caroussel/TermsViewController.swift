@@ -24,7 +24,7 @@ class TermsViewController: UIViewController {
         // Load Request into WebView.
         termsWebView.loadRequest(request as URLRequest)
         termsLoadIndicator.stopAnimating()
-        
+    
         
         
         
