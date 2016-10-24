@@ -21,6 +21,7 @@ class TermsViewController: UIViewController {
         let requestURL = NSURL(string:url)
         // Place the URL in a URL Request.
         let request = NSURLRequest(url: requestURL! as URL)
+        termsLoadIndicator.stopAnimating()
         // Load Request into WebView.
         termsWebView.loadRequest(request as URLRequest)
         termsLoadIndicator.stopAnimating()

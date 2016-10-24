@@ -139,7 +139,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
                 
             })
            
-        } else if emailText.text == "jottamenezes01@gmail.com" && passwordText.text == "Password" {
+        } else if emailText.text == "jottamenezes01@gmail.com" && passwordText.text == "GreatPassword" {
             delay(2, closure: { () -> () in
                 
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
