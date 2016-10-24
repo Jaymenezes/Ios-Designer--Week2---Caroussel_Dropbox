@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="8DM-oA-KRr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="mwy-lH-Lee">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -482,7 +482,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" misplaced="YES" id="hoj-Og-N4E" userLabel="fieldParentView">
-                                        <rect key="frame" x="4" y="87" width="366" height="252"/>
+                                        <rect key="frame" x="4" y="87" width="366" height="288"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_form" id="k6n-Bq-leT">
@@ -516,9 +516,12 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <action selector="didCheckPasswordStrenght:" destination="9lM-VS-b4c" eventType="editingChanged" id="kcH-j0-jPD"/>
+                                                </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rlv-cQ-eOP">
-                                                <frame key="frameInset" minX="53" minY="225" width="20" height="22"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rlv-cQ-eOP">
+                                                <frame key="frameInset" minX="53" minY="250" width="20" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="check_box"/>
                                                 <state key="selected" image="check_box_selected"/>
@@ -527,14 +530,14 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Agree to " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="maz-8b-yTc">
-                                                <frame key="frameInset" minX="86" minY="226" width="64" height="21"/>
+                                                <frame key="frameInset" minX="86" minY="251" width="64" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="0gi-EC-ePV">
-                                                <frame key="frameInset" minX="150" minY="225" width="43" height="22"/>
+                                                <frame key="frameInset" minX="150" minY="250" width="43" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
@@ -553,6 +556,10 @@
                                                     <segue destination="JHs-5L-Inc" kind="modal" id="K2e-Tv-HqB"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="signup_1" id="7CQ-d5-9R7">
+                                                <frame key="frameInset" minY="207" width="374" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -608,6 +615,7 @@
                         <outlet property="fieldParentView" destination="hoj-Og-N4E" id="rvt-Px-KSM"/>
                         <outlet property="introCreateText" destination="s2P-Nf-m3F" id="AvF-Po-dUY"/>
                         <outlet property="loginIndicator" destination="ozS-Rz-FYW" id="6aM-xO-HhG"/>
+                        <outlet property="passwordControl" destination="7CQ-d5-9R7" id="Sy9-fJ-IY9"/>
                         <outlet property="passwordText" destination="EXu-vo-E5e" id="RMA-2K-cKS"/>
                         <outlet property="termsButton" destination="Rlv-cQ-eOP" id="rkY-tN-T2f"/>
                         <segue destination="8DM-oA-KRr" kind="push" identifier="createSegue" id="oFp-Dc-Sml"/>
@@ -800,6 +808,7 @@
         <image name="settings_nav" width="320" height="64"/>
         <image name="sign_in_buttons" width="320" height="104"/>
         <image name="sign_in_nav_bar" width="320" height="66"/>
+        <image name="signup_1" width="320" height="39"/>
         <image name="welcome1" width="320" height="568"/>
         <image name="welcome2" width="320" height="568"/>
         <image name="welcome3" width="320" height="568"/>
@@ -811,7 +820,7 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9LG-pD-zhO"/>
-        <segue reference="nia-eM-wie"/>
+        <segue reference="oFp-Dc-Sml"/>
+        <segue reference="dx8-Iw-CrN"/>
     </inferredMetricsTieBreakers>
 </document>

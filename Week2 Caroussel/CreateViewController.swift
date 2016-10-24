@@ -31,6 +31,14 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var createScrollView: UIScrollView!
     
+    @IBOutlet weak var passwordControl: UIImageView!
+    let weakImage = UIImage(named: "signup_1")
+    let sosoImage = UIImage(named: "signup_2")
+    let goodImage = UIImage(named: "signup_3")
+    let greatImage = UIImage(named: "signup_4")
+ 
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         // Set initial transform values 20% of original size
         let transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
@@ -64,6 +72,11 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordControl.alpha = 0
+
+
+        
+        
         
         createScrollView.delegate = self
         
@@ -79,8 +92,8 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
                 let frame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
                 
                 
-                self.buttonParentView.frame.origin.y = self.buttonInitialY + self.buttonOffset
-                self.createScrollView.contentOffset.y = self.createScrollView.contentInset.bottom
+                self.buttonParentView.frame.origin.y = self.buttonInitialY + self.buttonOffset + 20
+                self.createScrollView.contentOffset.y = self.createScrollView.contentInset.bottom - 20
                 
                 
                 
@@ -145,6 +158,8 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
+    
+    
     @IBAction func didPressBlockedButton(_ sender: AnyObject) {
         delay(1, closure: { () -> () in
             self.loginIndicator.startAnimating()
@@ -165,6 +180,30 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    @IBAction func didCheckPasswordStrenght(_ sender: AnyObject) {
+                   var characterCount = passwordText.text?.characters.count
+        
+        
+        if characterCount! == 0 {
+                passwordControl.alpha = 0
+        } else if characterCount! < 4 && characterCount! > 0 {
+            print("weak password")
+            UIView.animate(withDuration: 0.5) {
+                self.passwordControl.alpha = 1
+            }
+            passwordControl.image = weakImage
+        } else if characterCount! < 6 {
+            print("So-So password")
+            passwordControl.image = sosoImage
+        } else if characterCount! < 8 {
+            print("Good password")
+            passwordControl.image = goodImage
+        } else {
+            print("Great! Password")
+            passwordControl.image = greatImage
+
+        }
+    }
     
     @IBAction func didPressCreate(_ sender: AnyObject) {
         loginIndicator.startAnimating()
@@ -189,7 +228,7 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
                 
             })
             
-        } else if emailText.text == "jottamenezes01@gmail.com" && passwordText.text == "Password" {
+        } else if emailText.text == "jottamenezes01@gmail.com" && passwordText.text == "GreatPassword" {
             delay(2, closure: { () -> () in
                 
                 self.performSegue(withIdentifier: "createSegue", sender: nil)
