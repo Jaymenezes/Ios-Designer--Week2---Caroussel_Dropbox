@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="QeL-GT-qY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="mwy-lH-Lee">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -83,6 +83,38 @@
             </objects>
             <point key="canvasLocation" x="672.5" y="152.5"/>
         </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="Fu2-dN-ksA">
+            <objects>
+                <viewController id="DkI-SJ-7L0" customClass="ForgotPasswordViewController" customModule="Week2_Caroussel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oSX-gy-0Df">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="forgot_password_nav" id="bdp-2m-diR">
+                                <frame key="frameInset" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="forgot_password_text" id="Vjm-vx-fuO">
+                                <frame key="frameInset" minY="78" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AWV-8o-KH7">
+                                <frame key="frameInset" minX="23" minY="28" width="34" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didPressBackButton:" destination="DkI-SJ-7L0" eventType="touchUpInside" id="iaG-Xc-GJP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RbS-Vi-pRR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xv-LA-LfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180.5" y="-706.5"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="g7I-ER-T88">
             <objects>
@@ -104,16 +136,23 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o0z-6m-aEO">
-                                                <frame key="frameInset" minX="45" minY="36" width="231" height="47"/>
+                                                <frame key="frameInset" minX="64" minY="83" width="231" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
-                                                    <action selector="didPressLogin:" destination="Ncj-uh-zmf" eventType="touchUpInside" id="mVY-L0-wfn"/>
+                                                    <segue destination="DkI-SJ-7L0" kind="push" id="Xx1-hr-ACF"/>
                                                 </connections>
                                             </button>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="white" id="N3M-UJ-ULz">
                                                 <frame key="frameInset" minX="289" minY="48" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </activityIndicatorView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Hqg-YP-OfP">
+                                                <frame key="frameInset" minX="43" minY="35" width="281" height="47"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="didPressLogin:" destination="Ncj-uh-zmf" eventType="touchUpInside" id="GmW-9c-sat"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -168,7 +207,7 @@
                         <outlet property="buttonParentView" destination="ay4-Yq-XGt" id="35b-FZ-RyJ"/>
                         <outlet property="emailText" destination="90L-Zx-PE6" id="MDB-0r-wry"/>
                         <outlet property="fieldParentView" destination="qtY-Wf-IhX" id="gCU-pq-XVk"/>
-                        <outlet property="loginButton" destination="o0z-6m-aEO" id="2fK-x9-Pdl"/>
+                        <outlet property="loginButton" destination="Hqg-YP-OfP" id="rRz-OL-gHA"/>
                         <outlet property="loginIndicator" destination="N3M-UJ-ULz" id="qdG-7A-hLc"/>
                         <outlet property="loginScrollView" destination="6Ka-lC-b11" id="RS8-hx-qPm"/>
                         <outlet property="login_text" destination="L5e-Hv-wX8" id="J9j-RK-12M"/>
@@ -467,7 +506,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rlv-cQ-eOP">
                                                 <frame key="frameInset" minX="53" minY="225" width="20" height="22"/>
@@ -515,11 +554,32 @@
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XZJ-zZ-vsb">
                                                 <frame key="frameInset" minX="26" minY="25" width="323" height="54"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="didPressCreate:" destination="9lM-VS-b4c" eventType="touchUpInside" id="h9a-nI-nPz"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="create_button" id="4rb-Yg-YwS">
                                                 <frame key="frameInset" minY="18" width="375" height="69"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" misplaced="YES" id="1Ll-VP-O7a">
+                                                <frame key="frameInset" minY="18" width="367" height="69"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ACy-jw-Kce">
+                                                        <frame key="frameInset" minX="21" minY="8" width="326" height="46"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="didPressBlockedButton:" destination="9lM-VS-b4c" eventType="touchUpInside" id="p2K-xg-a3z"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="white" id="ozS-Rz-FYW">
+                                                <frame key="frameInset" minX="317" minY="42" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -531,12 +591,17 @@
                     <navigationItem key="navigationItem" id="hcW-ex-7lY"/>
                     <connections>
                         <outlet property="backButton" destination="P7O-ZZ-AFG" id="j2s-hW-qQf"/>
+                        <outlet property="blockCreateButtonView" destination="1Ll-VP-O7a" id="Ux9-jo-bDI"/>
                         <outlet property="buttonParentView" destination="6IT-lf-kRH" id="cbq-6q-WZz"/>
                         <outlet property="createNavBar" destination="0Jm-GH-ljO" id="pYw-fA-IUg"/>
                         <outlet property="createScrollView" destination="5Mv-Ih-2Tt" id="4zl-oG-PVD"/>
+                        <outlet property="emailText" destination="E7e-dd-oDn" id="LAZ-uo-Bdb"/>
                         <outlet property="fieldParentView" destination="hoj-Og-N4E" id="rvt-Px-KSM"/>
                         <outlet property="introCreateText" destination="s2P-Nf-m3F" id="AvF-Po-dUY"/>
+                        <outlet property="loginIndicator" destination="ozS-Rz-FYW" id="6aM-xO-HhG"/>
+                        <outlet property="passwordText" destination="EXu-vo-E5e" id="RMA-2K-cKS"/>
                         <outlet property="termsButton" destination="Rlv-cQ-eOP" id="rkY-tN-T2f"/>
+                        <segue destination="8DM-oA-KRr" kind="push" identifier="createSegue" id="oFp-Dc-Sml"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nd-cf-vfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -579,8 +644,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" id="fSa-sj-byw">
-                                <frame key="frameInset" minX="177" minY="323" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="fSa-sj-byw">
+                                <frame key="frameInset" minX="169" minY="315" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
@@ -710,6 +775,8 @@
         <image name="example" width="640" height="1136"/>
         <image name="feed" width="320" height="1564"/>
         <image name="feed_nav" width="320" height="65"/>
+        <image name="forgot_password_nav" width="320" height="66"/>
+        <image name="forgot_password_text" width="320" height="67"/>
         <image name="intro" width="320" height="1136"/>
         <image name="intro_tile1" width="153" height="152"/>
         <image name="intro_tile2" width="76" height="75"/>
@@ -735,6 +802,7 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="aWl-H8-Lg8"/>
+        <segue reference="9LG-pD-zhO"/>
+        <segue reference="dx8-Iw-CrN"/>
     </inferredMetricsTieBreakers>
 </document>

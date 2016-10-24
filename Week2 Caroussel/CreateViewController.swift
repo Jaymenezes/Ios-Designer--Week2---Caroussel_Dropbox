@@ -9,12 +9,14 @@
 import UIKit
 
 class CreateViewController: UIViewController, UIScrollViewDelegate {
-
+    
     
     
     var buttonInitialY: CGFloat!
     var buttonOffset: CGFloat!
     
+    @IBOutlet weak var blockCreateButtonView: UIView!
+    @IBOutlet weak var loginIndicator: UIActivityIndicatorView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var introCreateText: UIImageView!
     
@@ -24,6 +26,8 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var termsButton: UIButton!
     
     @IBOutlet weak var buttonParentView: UIView!
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
     
     @IBOutlet weak var createScrollView: UIScrollView!
     
@@ -56,13 +60,13 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createScrollView.delegate = self
-
+        
         
         buttonInitialY = buttonParentView.frame.origin.y
         buttonOffset = -120
@@ -95,11 +99,11 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
             }
             
         }
-
         
-
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -116,24 +120,113 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func didPressBack(_ sender: AnyObject) {
         
         navigationController?.popViewController(animated: true)
-
+        
     }
-
+    
     @IBAction func didPressCheckbox(_ sender: AnyObject) {
         
         termsButton.isSelected = !termsButton.isSelected
+       delay(0.1) {
+        if self.termsButton.isSelected == false {
+            
+            self.blockCreateButtonView.isHidden = false
+            
+            
+        } else if self.termsButton.isSelected == true {
+            
+            self.blockCreateButtonView.isHidden = true
+            
+        }
 
+        
+        
+        }
+        
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didPressBlockedButton(_ sender: AnyObject) {
+        delay(1, closure: { () -> () in
+            self.loginIndicator.startAnimating()
+            let alertController = UIAlertController(title: "Agree with terms required", message: "Please accept terms and conditions", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                self.loginIndicator.stopAnimating()
+                
+            }
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true) {
+                
+                // optional code for what happens after the alert controller has finished presenting
+            }
+        })
+        
+        
     }
-    */
-
+    
+    
+    @IBAction func didPressCreate(_ sender: AnyObject) {
+        loginIndicator.startAnimating()
+        
+        if emailText.text!.isEmpty == true && passwordText.text!.isEmpty == true {
+            delay(0.4, closure: { () -> () in
+                self.loginIndicator.stopAnimating()
+                let alertController = UIAlertController(title: "Password Required", message: "Please enter new password", preferredStyle: .alert)
+                
+                self.present(alertController, animated: true) {
+                    
+                    // optional code for what happens after the alert controller has finished presenting
+                }
+                
+                let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                }
+                alertController.addAction(cancelAction)
+                
+                
+                print("field empty true")
+                
+                
+            })
+            
+        } else if emailText.text == "jottamenezes01@gmail.com" && passwordText.text == "Password" {
+            delay(2, closure: { () -> () in
+                
+                self.performSegue(withIdentifier: "createSegue", sender: nil)
+                self.loginIndicator.stopAnimating()
+                
+            })
+            
+            
+        } else {
+            delay(2, closure: { () -> () in
+                self.loginIndicator.stopAnimating()
+                let alertController = UIAlertController(title: "User Name taken", message: "Please enter another name", preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                    
+                }
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: true) {
+                    
+                    // optional code for what happens after the alert controller has finished presenting
+                }
+            })
+            
+        }
+        
+    }
 }
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+

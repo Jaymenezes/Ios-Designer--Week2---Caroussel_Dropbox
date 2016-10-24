@@ -57,6 +57,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.isSelected = false
         
         
         
@@ -138,7 +139,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
                 
             })
            
-        } else if emailText.text == "Codepath" && passwordText.text == "Awesome" {
+        } else if emailText.text == "jottamenezes01@gmail.com" && passwordText.text == "Password" {
             delay(2, closure: { () -> () in
                 
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
@@ -162,12 +163,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
             })
             
         }
-        
-        
-        
-        
-        
-        
+    
     }
     
     
