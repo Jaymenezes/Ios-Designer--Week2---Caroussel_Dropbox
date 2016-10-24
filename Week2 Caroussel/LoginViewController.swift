@@ -112,7 +112,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func didPressBack(_ sender: AnyObject) {
-        navigationController?.popViewController(animated: true)
+        navigationController!.popViewController(animated: true)
     }
     @IBAction func didPressLogin(_ sender: AnyObject) {
         

@@ -380,7 +380,7 @@
                                         <rect key="frame" x="15" y="719" width="352" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="flipHorizontal" id="aWl-H8-Lg8"/>
+                                            <action selector="didPressLogOut:" destination="kxC-KB-7fS" eventType="touchUpInside" id="4fJ-9h-Buc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -393,6 +393,7 @@
                         <outlet property="SettingsScrollView" destination="obh-aD-NDp" id="hAb-Kq-Baa"/>
                         <outlet property="settingImage" destination="62i-bt-WVP" id="6Qm-wL-Nvw"/>
                         <outlet property="settingsScrollView" destination="obh-aD-NDp" id="1GH-si-Ldp"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="logoutSegue" id="nia-eM-wie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6a7-0y-mTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -803,6 +804,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="9LG-pD-zhO"/>
-        <segue reference="dx8-Iw-CrN"/>
+        <segue reference="nia-eM-wie"/>
     </inferredMetricsTieBreakers>
 </document>

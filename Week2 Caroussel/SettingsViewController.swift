@@ -29,6 +29,28 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPressLogOut(_ sender: AnyObject) {
+        
+//        self.loginIndicator.stopAnimating()
+        let alertController = UIAlertController(title: "Are you sure you want to logout?", message: "", preferredStyle: .actionSheet)
+        
+        self.present(alertController, animated: true) {
+            
+            // optional code for what happens after the alert controller has finished presenting
+        }
+        
+        let logoutAction = UIAlertAction(title: "Log Out", style: .destructive) { (action) in
+           self.performSegue(withIdentifier: "logoutSegue", sender: self)
+        }
+        alertController.addAction(logoutAction)
+
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        }
+        alertController.addAction(cancelAction)
+        
+        
+    }
 
     /*
     // MARK: - Navigation
